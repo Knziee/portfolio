@@ -1,0 +1,27 @@
+/* MachineBackground.module.css */
+
+.alavanca {
+  position: absolute;
+  width: 100px; /* Ajuste conforme necessário */
+  height: 100px; /* Ajuste conforme necessário */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.alavancaPosition0 {
+  bottom: 105px; /* Ajuste conforme necessário */
+  left: 222px;  /* Ajuste conforme necessário */
+  background-image: url('/alavanca0.svg');
+}
+
+.alavancaPosition1 {
+  bottom: 110px; /* Ajuste conforme necessário */
+  left: 220px;  /* Ajuste conforme necessário */
+  background-image: url('/alavanca1R.svg');
+}
+
+.alavancaPosition2 {
+  bottom: 115px; /* Ajuste conforme necessário */
+  left: 218px;  /* Ajuste conforme necessário */
+  background-image: url('/alavanca2R.svg');
+}

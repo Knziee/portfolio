@@ -1,0 +1,18 @@
+<svg width="730" height="854" viewBox="0 0 730 854" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="77" y="155" width="588" height="500" fill="#AEEAFC"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M89 150H62V672H89V150ZM667 150H640V672H667V150Z" fill="#004980"/>
+<rect y="800" width="730" height="54" fill="#004980"/>
+<path d="M681.967 684L730 800H0L47.5326 684H681.967Z" fill="#136CB0"/>
+<path d="M642.413 180L669 151V150H61L89.0924 180H642.413Z" fill="#136CB0"/>
+<path d="M641.455 625L669 646.569V650H62V646.078L88.5437 625H641.455Z" fill="#136CB0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M682 126H47V151V647V684H682V647V151V126ZM667 151H62V647H667V151Z" fill="#004E88"/>
+<rect x="47" y="115" width="635" height="11" fill="#004579"/>
+<rect x="11" width="706" height="115" rx="15" fill="#136CB0"/>
+<rect x="47" y="13" width="636" height="89" rx="15" fill="#E6C731"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M185.247 13H143.387L80.0979 102H122.955L185.247 13ZM322.64 13H281.582L218.294 102H259.352H261.151H302.209L364.501 13H323.443H322.64ZM405.058 13H385.531L322.942 102H344.973L405.058 13Z" fill="#F0DA7F"/>
+<path d="M113 180H616V188C616 190.761 613.761 193 611 193H118C115.239 193 113 190.761 113 188V180Z" fill="#004980"/>
+<ellipse cx="241.5" cy="741.5" rx="77.5" ry="37.5" fill="#004980"/>
+<ellipse cx="241.5" cy="734.5" rx="77.5" ry="37.5" fill="#2579BD"/>
+<ellipse cx="485.5" cy="741.5" rx="77.5" ry="37.5" fill="#004980"/>
+<ellipse cx="485.5" cy="734.5" rx="77.5" ry="37.5" fill="#2579BD"/>
+</svg>
