@@ -1,4 +1,3 @@
-// components/Lever.tsx
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import alavancaStandard from "@/public/alavanca0.png";
@@ -10,7 +9,8 @@ import alavancaL05 from "@/public/alavanca05L.png";
 import alavancaL1 from "@/public/alavanca1L.png";
 import alavancaL15 from "@/public/alavanca15L.png";
 import alavancaL2 from "@/public/alavanca2L.png";
-import Claw from "./Claw";
+import chain1 from "@/public/correia1.svg";
+import chain2 from "@/public/correia2.svg";
 
 interface LeverProps {
   onChangePosition: (position: number) => void;
@@ -18,6 +18,7 @@ interface LeverProps {
 
 const Lever: React.FC<LeverProps> = ({ onChangePosition }) => {
   const [position, setPosition] = useState(0); // 0 = central, -2 = L2, -1.5 = L1.5, -1 = L1, -0.5 = L0.5, 1 = R1, 1.5 = R1.5, 2 = R2
+  const [currentChainImage, setCurrentChainImage] = useState(chain1);
   const keyPressTimeout = useRef<NodeJS.Timeout | null>(null);
   const isHoldingKey = useRef(false);
   const [dragging, setDragging] = useState(false);
@@ -134,6 +135,29 @@ const Lever: React.FC<LeverProps> = ({ onChangePosition }) => {
     onChangePosition(position);
   }, [position, onChangePosition]);
 
+  useEffect(() => {
+    let chainInterval: NodeJS.Timeout | null = null;
+
+    if (isHoldingKey.current) {
+      chainInterval = setInterval(() => {
+        setCurrentChainImage((prev: any) =>
+          prev === chain1 ? chain2 : chain1
+        );
+      }, 40);
+    } else {
+      if (chainInterval) {
+        clearInterval(chainInterval);
+      }
+      setCurrentChainImage(chain1);
+    }
+
+    return () => {
+      if (chainInterval) {
+        clearInterval(chainInterval);
+      }
+    };
+  }, [isHoldingKey.current]);
+
   const handleMouseDown = () => {
     setDragging(true);
   };
@@ -180,10 +204,21 @@ const Lever: React.FC<LeverProps> = ({ onChangePosition }) => {
           left: "164px",
           top: "622px",
           cursor: "pointer",
+          zIndex: "55",
         }}
         unoptimized={true}
-      />{" "}
-      {/* <Claw position={position} /> */}
+      />
+      <Image
+        src={currentChainImage}
+        draggable="false"
+        alt="Chain"
+        style={{
+          position: "absolute",
+          left: "111px",
+          top: "180px",
+        }}
+        unoptimized={true}
+      />
     </>
   );
 };

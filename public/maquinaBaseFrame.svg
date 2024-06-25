@@ -1,0 +1,13 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 730 854" width="730" height="854">
+	<title>maquinaBase-svg</title>
+	<style>
+		.s0 { fill: #004980 } 
+		.s1 { fill: #136cb0 } 
+		.s2 { fill: #004e88 } 
+	</style>
+	<path id="Layer" fill-rule="evenodd" class="s0" d="m89 672h-27v-522h27zm578 0h-27v-522h27z"/>
+	<path id="Layer" class="s1" d="m642.4 180l26.6-29v-1h-608l28.1 30z"/>
+	<path id="Layer" class="s1" d="m641.5 625l27.5 21.6v3.4h-607v-3.9l26.5-21.1z"/>
+	<path id="Layer" fill-rule="evenodd" class="s2" d="m682 684h-635v-558h635zm-15-533h-605v496h605z"/>
+	<path id="Layer" class="s0" d="m113 180h503v8c0 2.8-2.2 5-5 5h-493c-2.8 0-5-2.2-5-5z"/>
+</svg>

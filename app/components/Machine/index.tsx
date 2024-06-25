@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import MachineBase from "@/public/maquinaBase.svg";
+import MachineFrame from "@/public/maquinaBaseFrame.svg";
 import PressableButton from "../PressableButton";
 import Lever from "../Lever";
 import Claw from "../Claw"; // Importa o Claw
@@ -11,8 +12,7 @@ import styles from "./MachineBackground.module.css"; // Importa o CSS Module
 export default function MachineBackground() {
   const [position, setPosition] = useState(0);
   const [isPressed, setIsPressed] = useState(false);
-    const [clawPosition, setClawPosition] = useState(410);
-
+  const [clawPosition, setClawPosition] = useState(410);
 
   return (
     <div className="w-screen h-screen relative">
@@ -27,6 +27,11 @@ export default function MachineBackground() {
           isPressed={isPressed}
         />{" "}
         {/* Passa a posição atual para o Claw */}
+        <Image
+          src={MachineFrame}
+          alt="Machine Base"
+          className="absolute z-50"
+        />
       </div>
     </div>
   );

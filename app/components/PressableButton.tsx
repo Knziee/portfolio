@@ -3,41 +3,36 @@ import Image from "next/image";
 import unpressed from "@/public/buttonOff.png";
 import pressed from "@/public/buttonOn.png";
 
-
 interface ClawProps {
   isPressed: boolean;
   setIsPressed: (isPressed: boolean) => void;
 }
 
-export default function PressableButton({ isPressed, setIsPressed }: ClawProps) {
-
+export default function PressableButton({
+  isPressed,
+  setIsPressed,
+}: ClawProps) {
   const handleMouseDown = () => {
     setIsPressed(true);
+    setTimeout(() => {
+      setIsPressed(false);
+    }, 5000); // 5 seconds
   };
 
-  const handleMouseUp = () => {
-    setIsPressed(false);
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === "ArrowDown") {
+      setIsPressed(true);
+      // setTimeout(() => {
+      //   setIsPressed(false);
+      // }, 5000); // 5 seconds
+    }
   };
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowDown") {
-        setIsPressed(true);
-      }
-    };
-
-    const handleKeyUp = (e: KeyboardEvent) => {
-      if (e.key === "ArrowDown") {
-        setIsPressed(false);
-      }
-    };
-
     window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("keyup", handleKeyUp);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      window.removeEventListener("keyup", handleKeyUp);
     };
   }, []);
 
@@ -47,10 +42,9 @@ export default function PressableButton({ isPressed, setIsPressed }: ClawProps) 
       alt="Pressable Button"
       draggable="false"
       onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp} // Ensure button is released when the mouse leaves the button
       style={{
         position: "absolute",
+        zIndex: 55,
         left: "414px", // Adjust position as needed
         top: "678px", // Adjust position as needed
         cursor: "pointer",
